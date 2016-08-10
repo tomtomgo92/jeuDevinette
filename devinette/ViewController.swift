@@ -15,7 +15,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var reponse: UILabel!
 
     @IBAction func validerChoix(sender: AnyObject) {
+        let aleatoire = Int(arc4random_uniform(11))
+        print(aleatoire)
         
+        if userChoise.text == String(aleatoire) {
+            print("bravo")
+        reponse.text = "Bravo j'avais \(aleatoire) doigts"
+
+        } else {
+            print("faux")
+            reponse.text = "Dommage j'avais \(aleatoire) doigts"
+            
+        }
+        userChoise.text = ""
     }
     
     override func viewDidLoad() {
